@@ -1,0 +1,117 @@
+---
+import Base from '../layouts/Base.astro';
+
+const currentClass = {
+  name: "New Testament Survey I",
+  institution: "Midwestern Baptist Theological Seminary",
+  semester: "Spring 2026",
+  description: "An introduction to the New Testament canon, with focus on the Gospels, Acts, and the historical-theological context of early Christianity.",
+  papers: [
+    {
+      title: "What Is the New Testament?",
+      type: "Unit Overview Paper",
+      unit: "Unit 1",
+      description: "An overview of the nature, formation, and theological significance of the New Testament canon.",
+    },
+    {
+      title: "What Are the Gospels?",
+      type: "Discussion Post",
+      unit: "Unit 2",
+      description: "An examination of the Gospel genre, purpose, and the theological intent of the four Evangelists.",
+    },
+  ],
+};
+
+const completedClasses = [
+  {
+    name: "Christian Ethics",
+    semester: "Fall 2025",
+    units: 7,
+    description: "Foundations of Christian moral reasoning, applied ethics, and theological engagement with contemporary ethical issues.",
+  },
+  {
+    name: "Old Testament Survey II",
+    semester: "Fall 2025",
+    units: 8,
+    description: "A survey of the poetic and prophetic literature of the Old Testament, with emphasis on canonical theology.",
+  },
+  {
+    name: "Old Testament Survey I",
+    semester: "Summer 2025",
+    units: 8,
+    description: "An introduction to the Pentateuch and historical books, covering major themes of creation, covenant, and redemption.",
+  },
+  {
+    name: "Biblical Spirituality",
+    semester: "Spring 2025",
+    units: 8,
+    description: "A theological and practical exploration of Christian spiritual formation rooted in Scripture.",
+  },
+  {
+    name: "Introduction to Hermeneutics",
+    semester: "Spring 2025",
+    units: 8,
+    description: "Principles and methods for interpreting Scripture faithfully, with attention to genre, context, and application.",
+  },
+];
+---
+
+<Base title="Seminary" description="Academic papers and course work from Midwestern Baptist Theological Seminary.">
+
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    Seminary
+  </div>
+
+  <div class="section-header">
+    <h2>Seminary Work</h2>
+    <p>
+      Master of Theological Studies (MTS) · Midwestern Baptist Theological Seminary · Online · 2025–present
+    </p>
+  </div>
+
+  <div style="margin-bottom: 3rem;">
+    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+      <h2 style="font-size: 1.15rem;">{currentClass.name}</h2>
+      <span class="tag" style="background: #e8f5e9; color: #2c5f3a;">Current — {currentClass.semester}</span>
+    </div>
+    <p style="color: var(--color-muted); font-size: 0.9rem; margin-bottom: 1.5rem; max-width: 600px;">
+      {currentClass.description}
+    </p>
+
+    <div class="doc-list">
+      {currentClass.papers.map((p) => (
+        <div class="doc-item">
+          <div class="doc-item-text">
+            <h3>{p.title}</h3>
+            <p>{p.description}</p>
+          </div>
+          <div class="doc-item-meta">
+            {p.unit} · {p.type}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="section-header">
+    <h2>Completed Courses</h2>
+    <p>Five courses completed; all units finalized.</p>
+  </div>
+
+  <div class="doc-list">
+    {completedClasses.map((c) => (
+      <div class="doc-item">
+        <div class="doc-item-text">
+          <h3>{c.name}</h3>
+          <p>{c.description}</p>
+        </div>
+        <div class="doc-item-meta">
+          {c.units} Units · {c.semester}
+        </div>
+      </div>
+    ))}
+  </div>
+
+</Base>

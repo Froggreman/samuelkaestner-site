@@ -1,0 +1,174 @@
+---
+import Base from '../layouts/Base.astro';
+
+const series = [
+  {
+    title: "Real",
+    scripture: "1 John",
+    weeks: 4,
+    hook: "Everybody performs online. 1 John asks: is your faith real?",
+    tags: ["Authenticity", "Faith", "1 John"],
+  },
+  {
+    title: "Rejoice",
+    scripture: "Philippians",
+    weeks: 4,
+    hook: "Paul wrote the happiest letter in the Bible from prison. What does he know that we don't?",
+    tags: ["Joy", "Philippians", "Contentment"],
+  },
+  {
+    title: "Just Do It",
+    scripture: "James",
+    weeks: 4,
+    hook: "You can say you believe anything. James wants to know: does your life agree?",
+    tags: ["Faith & Works", "James", "Obedience"],
+  },
+  {
+    title: "Stranger",
+    scripture: "1 Peter",
+    weeks: 4,
+    hook: "Gen Z feels like they don't belong anywhere. God says that's exactly right — His people never did.",
+    tags: ["Identity", "1 Peter", "Belonging"],
+  },
+  {
+    title: "Third Way",
+    scripture: "Philippians 2, John 8, Romans 12",
+    weeks: 4,
+    hook: "Culture keeps giving you two options. Jesus keeps refusing both.",
+    tags: ["Culture", "Ethics", "Humility"],
+  },
+  {
+    title: "The Greatest Story",
+    scripture: "Genesis · John · Revelation",
+    weeks: 4,
+    hook: "You love stories with deep lore. God wrote the deepest one — and you're in it.",
+    tags: ["Gospel", "Metanarrative", "Apologetics"],
+  },
+  {
+    title: "Christians in 2026",
+    scripture: "Matthew 5, Daniel 1, Acts 2",
+    weeks: 4,
+    hook: "Everybody has a take. Christians are supposed to have something better.",
+    tags: ["Culture", "Discipleship", "Identity"],
+  },
+  {
+    title: "Half Full",
+    scripture: "Romans 8, Psalm 139, Romans 12",
+    weeks: 4,
+    hook: "Not toxic positivity. Not despair. The biblical third option.",
+    tags: ["Hope", "Mindset", "Sovereignty"],
+  },
+  {
+    title: "Main Character",
+    scripture: "Ephesians 2, Psalm 139, Romans 8, John 10",
+    weeks: 4,
+    hook: "Gen Z's biggest fear isn't failing. It's being irrelevant. Jesus has something to say about that.",
+    tags: ["Identity", "Purpose", "Calling"],
+  },
+  {
+    title: "Timeless in 2026",
+    scripture: "Hebrews 13, Malachi 3, Revelation 21, Psalm 145",
+    weeks: 4,
+    hook: "You're obsessed with bringing back 2016. But God never went out of style.",
+    tags: ["Culture", "Nostalgia", "God's Character"],
+  },
+  {
+    title: "Signal",
+    scripture: "1 Timothy 2",
+    weeks: 4,
+    hook: "You text, DM, and post constantly — but when's the last time you actually talked to God?",
+    tags: ["Prayer", "1 Timothy", "Discipleship"],
+  },
+  {
+    title: "Who Am I Really?",
+    scripture: "Psalm 139, 1 Samuel 16, 1 Corinthians 12, 2 Corinthians 3",
+    weeks: 4,
+    hook: "You've let the algorithm tell you who you are. Scripture disagrees.",
+    tags: ["Identity", "Social Media", "Belonging"],
+  },
+  {
+    title: "Mind and Soul",
+    scripture: "Romans 12, 1 Peter 5, James 1, Mark 6",
+    weeks: 4,
+    hook: "Mental health, Scripture, and what God actually says about your mind.",
+    tags: ["Mental Health", "Anxiety", "Renewal"],
+  },
+  {
+    title: "Children's Stories Revisited",
+    scripture: "Jonah · Luke 15 · John 6 · Genesis 6-9",
+    weeks: 4,
+    hook: "You learned these as a kid. You missed the whole point.",
+    tags: ["Gospel", "Narrative", "Christology"],
+  },
+];
+
+const standalones = [
+  {
+    title: "Mirror and the Face",
+    scripture: "Psalm 139, John 15",
+    hook: "AI companions are mirrors. Jesus is a face. There's a difference.",
+  },
+  {
+    title: "It's Not a Situationship",
+    scripture: "James 1, Philippians 3, Matthew 6",
+    hook: "Vague spiritual identity is killing your faith. James has something to say about it.",
+  },
+];
+---
+
+<Base title="Ministry" description="Youth teaching series and small group guides developed for middle and high school students.">
+
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    Ministry
+  </div>
+
+  <div class="section-header">
+    <h2>Teaching Series</h2>
+    <p>
+      Four-week series developed for middle and high school students at Crosspoint Church, McKinney, TX.
+      Each series includes a full teaching outline for every week and a consolidated volunteer small group leader guide.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    {series.map((s) => (
+      <div class="card">
+        <p class="card-label">{s.weeks} Weeks · {s.scripture}</p>
+        <h3>"{s.title}"</h3>
+        <p>{s.hook}</p>
+        <div style="margin-top: 0.75rem;">
+          {s.tags.map(tag => <span class="tag">{tag}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="section-header" style="margin-top: 3rem;">
+    <h2>Standalone Messages</h2>
+    <p>Individual sermons and teaching outlines for Wednesday or Sunday use.</p>
+  </div>
+
+  <div class="doc-list">
+    {standalones.map((m) => (
+      <div class="doc-item">
+        <div class="doc-item-text">
+          <h3>"{m.title}"</h3>
+          <p>{m.hook}</p>
+          <p style="margin-top: 0.3rem;"><em>{m.scripture}</em></p>
+        </div>
+        <div class="doc-item-meta">Standalone</div>
+      </div>
+    ))}
+  </div>
+
+  <div style="margin-top: 3rem; padding: 1.5rem; background: var(--color-accent-bg); border-radius: var(--radius); border: 1px solid var(--color-border);">
+    <h3 style="margin-bottom: 0.5rem;">Looking for a full resource?</h3>
+    <p style="color: var(--color-muted); font-size: 0.9rem; margin: 0;">
+      Full teaching outlines and small group leader guides are available on request.
+      Reach out if you're a youth pastor or ministry leader who'd like to use any of these materials.
+    </p>
+  </div>
+
+</Base>

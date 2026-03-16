@@ -1,17 +1,45 @@
 ---
-
+import Base from '../layouts/Base.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Samuel Kaestner" description="Youth pastor, seminary student, and minister in McKinney, TX.">
+
+  <div class="hero">
+    <p class="hero-label">Youth Pastor · Seminary Student · Minister</p>
+    <h1>Samuel Kaestner</h1>
+    <p class="tagline">
+      Serving students and families at Crosspoint Church in McKinney, TX.
+      Pursuing a Master of Theological Studies at Midwestern Baptist Theological Seminary.
+    </p>
+    <div class="mission-box">
+      "To develop resilient believers who love and live for Jesus by leveraging every advance of our generation
+      to point young hearts to the one true Life-Changer: Scripture fulfilled in Christ's cross and resurrection."
+    </div>
+  </div>
+
+  <div class="section-header">
+    <h2>Work</h2>
+    <p>Teaching series, sermon preparation, and academic writing.</p>
+  </div>
+
+  <div class="card-grid">
+    <a href="/ministry" class="card" style="text-decoration:none;color:inherit;">
+      <p class="card-label">Youth Ministry</p>
+      <h3>Teaching Series & Small Group Guides</h3>
+      <p>Four-week youth series and volunteer leader guides developed for middle and high school students at Crosspoint Church.</p>
+    </a>
+
+    <a href="/seminary" class="card" style="text-decoration:none;color:inherit;">
+      <p class="card-label">Seminary</p>
+      <h3>Academic Papers & Course Notes</h3>
+      <p>Written work completed at Midwestern Baptist Theological Seminary toward a Master of Theological Studies degree.</p>
+    </a>
+
+    <a href="/about" class="card" style="text-decoration:none;color:inherit;">
+      <p class="card-label">About</p>
+      <h3>Background & Philosophy</h3>
+      <p>Ministry context, teaching philosophy, and theological convictions that shape the work.</p>
+    </a>
+  </div>
+
+</Base>
