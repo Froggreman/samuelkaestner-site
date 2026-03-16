@@ -7,6 +7,8 @@ export interface Props {
 const { title, description = "Youth pastor, seminary student, and minister in McKinney, TX." } = Astro.props;
 const siteTitle = "Samuel Kaestner";
 const fullTitle = title === siteTitle ? title : `${title} — ${siteTitle}`;
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
@@ -18,7 +20,7 @@ const fullTitle = title === siteTitle ? title : `${title} — ${siteTitle}`;
     <title>{fullTitle}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
@@ -26,20 +28,18 @@ const fullTitle = title === siteTitle ? title : `${title} — ${siteTitle}`;
       <div class="header-inner">
         <a href="/" class="site-name">Samuel Kaestner</a>
         <nav>
-          <a href="/">Home</a>
-          <a href="/ministry">Ministry</a>
-          <a href="/seminary">Seminary</a>
-          <a href="/about">About</a>
+          <a href="/" class={currentPath === "/" ? "active" : ""}>Home</a>
+          <a href="/ministry" class={currentPath.startsWith("/ministry") ? "active" : ""}>Ministry</a>
+          <a href="/seminary" class={currentPath.startsWith("/seminary") ? "active" : ""}>Seminary</a>
+          <a href="/about" class={currentPath.startsWith("/about") ? "active" : ""}>About</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <slot />
-    </main>
+    <slot />
 
     <footer class="site-footer">
-      <p>Samuel Kaestner · Youth Pastor, Crosspoint Church McKinney · MTS Student, Midwestern Baptist Theological Seminary</p>
+      <p>Samuel Kaestner &nbsp;·&nbsp; Youth Pastor, Crosspoint Church McKinney &nbsp;·&nbsp; MTS Student, Midwestern Baptist Theological Seminary</p>
     </footer>
   </body>
 </html>
